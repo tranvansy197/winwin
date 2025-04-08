@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1001127195656-9p8qrhp0gmk9epnjiptu7sjo3dkq3vip.apps.googleusercontent.com
+            client-secret: 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
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+            scope:
+              - email
+              - profile
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9200

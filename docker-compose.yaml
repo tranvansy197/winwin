@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: postgres_win
+    image: postgres_win
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: db_win
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_win:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres_win:
